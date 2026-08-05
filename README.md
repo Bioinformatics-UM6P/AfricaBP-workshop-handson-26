@@ -1,9 +1,9 @@
-# EEIA — bioAI Workshop · Semaine 4
+# EEIA: bioAI Workshop · Semaine 4
 
-**De l'ADN aux modèles** — une semaine pour aller d'un génome bactérien brut
+**De l'ADN aux modèles**: une semaine pour aller d'un génome bactérien brut
 jusqu'à un classifieur minuscule distillé depuis un modèle de fondation génomique.
 
-<!-- Auteur : Généreux Akotenou — PhD student, BioinformaticLabs College of Computing / UM6P
+<!-- Auteur : Généreux Akotenou: PhD student, BioinformaticLabs College of Computing / UM6P
 · [dépôt GitHub](https://github.com/Genereux-akotenou/EEIA-bioAI-Workshop) -->
 
 ---
@@ -22,7 +22,7 @@ La présentation d'ouverture est dans [`1-Introduction/presentation`](1-Introduc
 <!-- Toutes les commandes ci-dessous se lancent **depuis ce dossier `week4/`**.
 Python **3.10 ou plus récent** est requis. -->
 
-### Option A — `venv` (recommandée, aucune installation supplémentaire)
+### Option A: `venv` (recommandée, aucune installation supplémentaire)
 
 ```bash
 # 1. créer l'environnement
@@ -40,7 +40,7 @@ pip install -r requirements.txt
 python -m ipykernel install --user --name eeia-bioai --display-name "(eeia-bioai)"
 ```
 
-### Option B — `conda`
+### Option B: `conda`
 
 ```bash
 conda create -n eeia-bioai python=3.11 -y
@@ -101,11 +101,11 @@ précédent, et le graphique final du Jour 4 rassemble tout.
 
 - Chaque notebook commence par une cellule **« Votre identité »** : double-cliquez dessus
   et complétez nom, binôme et date avant de commencer.
-- Les cellules à compléter sont marquées `# TODO :` — remplacez les `...` par votre code.
+- Les cellules à compléter sont marquées `# TODO :`: remplacez les `...` par votre code.
 - Chaque dossier `dayN/` contient un sous-dossier `src/` avec le code d'infrastructure
   déjà écrit (chargement des données, métriques, graphiques) : à utiliser tel quel.
 - Un sous-dossier `solution/` accompagne chaque jour avec la version corrigée complète.
-  **Essayez d'abord par vous-même** — la solution est là pour se débloquer, pas pour
+  **Essayez d'abord par vous-même**: la solution est là pour se débloquer, pas pour
   démarrer.
 
 ## 5. Licence
