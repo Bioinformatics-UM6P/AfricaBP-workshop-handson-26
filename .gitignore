@@ -1,4 +1,10 @@
-# Data is large (multi-GB genomes + activation dumps) and lives outside git history.
+# Data is large (genomes + Evo2 activation dumps) and lives outside git history.
+# Students download it from Drive — see 2-data/embeddings/README.md
+2-data/raw/
+2-data/processed/
+2-data/embeddings/*
+!2-data/embeddings/README.md
+
 data/autoencoder/
 temp_chunk_of_code_will_be_deleted/
 
