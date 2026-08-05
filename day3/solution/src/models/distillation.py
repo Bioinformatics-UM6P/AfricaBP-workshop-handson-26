@@ -30,7 +30,8 @@ def distillation_loss(student_logits, teacher_logits, labels,
 
 
 def train_student(student, teacher_logits, inputs, labels, epochs=20, lr=1e-3,
-                   temperature=4.0, alpha=0.5, device="cpu", batch_size=256):
+                   temperature=4.0, alpha=0.5, device="cpu", batch_size=256,
+                   log_every=10):
     """inputs: tenseur déjà transformé en caractéristiques pour le student (vecteurs
     k-mer ou fenêtres one-hot). teacher_logits: précalculés une fois, dans le même ordre
     que inputs."""
@@ -38,11 +39,12 @@ def train_student(student, teacher_logits, inputs, labels, epochs=20, lr=1e-3,
     optimizer = torch.optim.Adam(student.parameters(), lr=lr)
 
     n = inputs.shape[0]
-    history = {"loss": []}
+    history = {"loss": [], "accuracy": []}
 
     for epoch in range(epochs):
         perm = torch.randperm(n)
         epoch_loss = 0.0
+        epoch_correct = 0
         for start in range(0, n, batch_size):
             idx = perm[start:start + batch_size]
             x = inputs[idx].to(device)
@@ -55,7 +57,15 @@ def train_student(student, teacher_logits, inputs, labels, epochs=20, lr=1e-3,
             loss.backward()
             optimizer.step()
             epoch_loss += loss.item() * len(idx)
+            epoch_correct += ((s_logits > 0).float() == y).sum().item()
 
-        history["loss"].append(epoch_loss / n)
+        avg_loss = epoch_loss / n
+        history["loss"].append(avg_loss)
+        history["accuracy"].append(epoch_correct / n)
+
+        if log_every and ((epoch + 1) % log_every == 0 or epoch == 0
+                          or epoch == epochs - 1):
+            print(f"epoch {epoch + 1:3d}/{epochs} | loss={avg_loss:.4f} "
+                  f"| acc={epoch_correct / n:.4f}")
 
     return student, history
