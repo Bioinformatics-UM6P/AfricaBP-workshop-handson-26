@@ -1,7 +1,6 @@
-# Data is large (genomes + Evo2 activation dumps) and lives outside git history.
-# Students download it from Drive — see 2-data/embeddings/README.md
-2-data/raw/
-2-data/processed/
+# Evo2 embedding dumps are single files of 100+ MB, past GitHub's file size
+# limit, so they live on Drive — see 2-data/embeddings/README.md
+# raw/ and processed/ stay in git: no individual file there exceeds 16 MB.
 2-data/embeddings/*
 !2-data/embeddings/README.md
 
