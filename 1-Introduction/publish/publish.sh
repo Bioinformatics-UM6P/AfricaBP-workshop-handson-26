@@ -13,8 +13,9 @@
 # étiquetées (2-data/processed/) exactement comme ici. Seuls restent dehors :
 #   - les solution/          : c'est le but
 #   - 1-Introduction/presentation/ : sources LaTeX du diaporama (le PDF part)
-#   - 2-data/embeddings/     : fichiers de 100+ Mo, refusés par GitHub, servis
-#                              via Drive (voir 2-data/embeddings/README.md)
+#   - 2-data/{autoencoder,embeddings,probe}/ : données lourdes, refusées par
+#                              GitHub, servies via Drive. Seul le README de
+#                              chaque dossier est publié (il porte le lien).
 #   - les secrets et poids   : .env, *.pt
 #
 # Le dépôt public a son PROPRE historique : rien de l'historique privé n'y passe
@@ -110,13 +111,17 @@ RSYNC_ARGS=(
 
 [ "$WITH_PROCESSED" -eq 1 ] || RSYNC_ARGS+=( --exclude '2-data/processed/' )
 [ "$WITH_RAW"       -eq 1 ] || RSYNC_ARGS+=( --exclude '2-data/raw/' )
-# Les .npz font 100+ Mo : jamais sur GitHub. On garde quand même le README,
-# c'est lui qui donne le lien Drive aux étudiants.
-RSYNC_ARGS+=(
-    --include '2-data/embeddings/'
-    --include '2-data/embeddings/README.md'
-    --exclude '2-data/embeddings/*'
-)
+# Dossiers de données lourdes : trop gros pour GitHub, servis via Drive.
+# On garde uniquement leur README — c'est lui qui donne le lien de
+# téléchargement aux étudiants. Doit rester aligné avec le .gitignore.
+HEAVY_DIRS=( autoencoder embeddings probe )
+for d in "${HEAVY_DIRS[@]}"; do
+    RSYNC_ARGS+=(
+        --include "2-data/$d/"
+        --include "2-data/$d/README.md"
+        --exclude "2-data/$d/*"
+    )
+done
 
 # le contenu de l'atelier est à la racine du dépôt (1-Introduction/, 2-data/,
 # day1..day5/, README.md, LICENSE) : on synchronise racine → racine.
@@ -140,6 +145,17 @@ if find "$CLONE_DIR" -path "$CLONE_DIR/.git" -prune -o \
      \( -type d -name presentation -o -type f -name '*.tex' \) -print | grep -q .; then
     warn "les sources LaTeX du diaporama subsistent dans la copie publique"; FAIL=1
 fi
+
+# chaque dossier lourd ne doit contenir QUE son README
+for d in "${HEAVY_DIRS[@]}"; do
+    [ -d "$CLONE_DIR/2-data/$d" ] || continue
+    INTRUS=$(find "$CLONE_DIR/2-data/$d" -mindepth 1 -not -name 'README.md' || true)
+    if [ -n "$INTRUS" ]; then
+        warn "2-data/$d/ ne devrait contenir que README.md, or on y trouve :"
+        printf '      %s\n' $INTRUS >&2
+        FAIL=1
+    fi
+done
 
 # une vraie clé, pas le placeholder « nvapi-... » de la documentation
 KEYFILES=$(grep -rIlE --exclude-dir=.git 'nvapi-[A-Za-z0-9_-]{20,}' "$CLONE_DIR" 2>/dev/null || true)
