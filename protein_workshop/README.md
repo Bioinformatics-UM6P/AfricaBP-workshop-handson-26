@@ -29,34 +29,23 @@ Selected transcription factor families with balanced sample sizes:
 pip install -r requirements.txt
 ```
 
-2. Run Day 1 notebook to prepare data:
+2. Run the notebook:
 ```bash
-jupyter notebook day1/01_protein_intro_and_data_setup.ipynb
-```
-
-3. Extract ESM2 embeddings:
-```bash
-cd 2-data
-python extract_esm2_embeddings.py --max_samples 1000
+jupyter notebook protein_classification_esm2.ipynb
 ```
 
 ## Structure
 
 ```
 protein_workshop/
-├── 1-Introduction/
 ├── 2-data/
 │   ├── raw/              # Downloaded FASTA files
 │   ├── processed/        # Train/val/test splits
 │   ├── embeddings/       # ESM2 embeddings
 │   └── models/           # Saved models
-├── day1/                 # Introduction & data setup
-├── day2/                 # Baseline models
-├── day3/                 # ESM2 teacher
-├── day4/                 # Knowledge distillation
-├── day5/                 # Student alternatives
-├── day6/                 # Advanced techniques
-└── day7/                 - Final comparison
+├── assets/               # Images and diagrams
+├── protein_classification_esm2.ipynb  # Main notebook
+└── requirements.txt
 ```
 
 ## Large Files
