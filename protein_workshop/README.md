@@ -59,6 +59,15 @@ protein_workshop/
 └── day7/                 - Final comparison
 ```
 
+## Large Files
+
+Due to GitHub's file size limit (100 MB), the following large files are stored in Google Drive:
+
+- `protein_workshop/2-data/processed/train.npz` (117.94 MB)
+- `protein_workshop/2-data/embeddings/*` (all embedding files)
+
+Download them from: https://drive.google.com/drive/folders/1Rnv2CWg1Xp31y8cIGn49s7SejHqf4oWD
+
 ## ESM2 Models
 
 Available ESM2 models (from Meta):
