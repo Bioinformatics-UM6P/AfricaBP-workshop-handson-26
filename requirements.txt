@@ -1,4 +1,4 @@
-# EEIA — bioAI Workshop
+# AfricaBP — bioAI Workshop
 # pip install -r requirements.txt
 numpy
 pandas

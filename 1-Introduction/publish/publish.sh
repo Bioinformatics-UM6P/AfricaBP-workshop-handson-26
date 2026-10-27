@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# EEIA — bioAI Workshop
+# AfricaBP — bioAI Workshop
 # Author: Généreux Akotenou — PhD student, BioinformaticLabs College of Computing / UM6P
-# https://github.com/Genereux-akotenou/EEIA-bioAI-Workshop
+# https://github.com/Bioinformatics-UM6P/AfricaBP-workshop-handson-26
 # Licensed under the MIT License. See LICENSE at the repo root.
 #
 # publish.sh — publie la version ÉTUDIANTE (sans solutions) vers le dépôt public.
@@ -25,19 +25,28 @@
 # -----
 #   bash 1-Introduction/publish/publish.sh --dry-run      # simulation
 #   bash 1-Introduction/publish/publish.sh                # publier
-#   bash 1-Introduction/publish/publish.sh -m "Jour 3"    # message de commit
+#   bash 1-Introduction/publish/publish.sh -m "Lab 3"    # message de commit
 #   bash 1-Introduction/publish/publish.sh --no-raw       # sans les génomes FASTA
 #   bash 1-Introduction/publish/publish.sh --no-processed # sans les CSV
 #
 set -euo pipefail
 
 # ---------------------------------------------------------------- configuration
-PUBLIC_REPO="${PUBLIC_REPO:-Genereux-akotenou/EEIA-bioAI-Workshop-project}"
-WORK_DIR="${WORK_DIR:-$HOME/.cache/eeia-publish}"
+PUBLIC_REPO="${PUBLIC_REPO:-Bioinformatics-UM6P/AfricaBP-workshop-handson-26}"
+WORK_DIR="${WORK_DIR:-$HOME/.cache/africabp-publish}"
 MAX_FILE_MB=95            # GitHub refuse au-delà de 100 Mo
 
 # ce script vit dans <racine>/1-Introduction/publish/ → deux niveaux au-dessus
 SRC_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+
+# garde-fou : publier vers son propre origin y effacerait toutes les solution/
+SRC_ORIGIN="$(git -C "$SRC_ROOT" remote get-url origin 2>/dev/null || true)"
+case "$SRC_ORIGIN" in
+    *"$PUBLIC_REPO"|*"$PUBLIC_REPO.git")
+        echo "ERREUR PUBLIC_REPO ($PUBLIC_REPO) est l'origin de ce dépôt source." >&2
+        echo "       Passez un autre dépôt : PUBLIC_REPO=org/nom bash $0" >&2
+        exit 1 ;;
+esac
 CLONE_DIR="$WORK_DIR/$(basename "$PUBLIC_REPO")"
 
 DRY_RUN=0
@@ -79,7 +88,7 @@ elif [ ! -d "$CLONE_DIR/.git" ]; then
         command -v gh >/dev/null || die "Dépôt $PUBLIC_REPO introuvable et gh absent."
         say "Création du dépôt public $PUBLIC_REPO"
         gh repo create "$PUBLIC_REPO" --public \
-           --description "Atelier bioIA — EEIA : version étudiante (sans solutions)" \
+           --description "Atelier bioIA — AfricaBP : version étudiante (sans solutions)" \
            --clone --add-readme >/dev/null
         mv "$(basename "$PUBLIC_REPO")" "$CLONE_DIR" 2>/dev/null || \
             git clone "https://github.com/$PUBLIC_REPO.git" "$CLONE_DIR"
@@ -124,7 +133,7 @@ for d in "${HEAVY_DIRS[@]}"; do
 done
 
 # le contenu de l'atelier est à la racine du dépôt (1-Introduction/, 2-data/,
-# day1..day5/, README.md, LICENSE) : on synchronise racine → racine.
+# lab1..lab5/, labBonus/, README.md, LICENSE) : on synchronise racine → racine.
 rsync "${RSYNC_ARGS[@]}" "$SRC_ROOT/" "$CLONE_DIR/"
 
 # ---------------------------------------------------------------- garde-fous

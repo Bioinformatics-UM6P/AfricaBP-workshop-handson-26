@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# EEIA — bioAI Workshop — activations Evo2 pour la piste bonus (Jour 5).
+# AfricaBP — bioAI Workshop — activations Evo2 pour la piste bonus (Lab 5).
 # Organisateur uniquement.
 #
 #   export NVIDIA_API_KEY=nvapi-...
@@ -16,7 +16,7 @@ if [ -z "${NVIDIA_API_KEY:-}" ]; then
 fi
 
 # TOKEN_STRIDE=1 : on garde TOUTES les positions.
-# Indispensable — l'analyse de périodicité du Jour 5 fait une FFT sur des positions
+# Indispensable — l'analyse de périodicité du Lab 5 fait une FFT sur des positions
 # CONSÉCUTIVES. Avec un pas de 8, un signal de période 3 (le cadre de lecture des
 # codons) serait replié et apparaîtrait vers 1,5 : le résultat serait faux.
 #

@@ -1,5 +1,5 @@
 % =========================================================
-% EEIA — bioAI Workshop · Semaine 4
+% AfricaBP — bioAI Workshop · Atelier pratique 2026
 % Pitch de 5 minutes pour présenter le projet aux étudiants
 %
 % Compilation : pdflatex main.tex (2x), ou directement sur Overleaf.
@@ -97,8 +97,8 @@
       at ([xshift=1.7cm]current page.east)
       {\includegraphics[height=1.06\paperheight]{illustrations/dna-light.png}};
 
-    % --- logo de l'école, sur une carte blanche (le PNG est transparent)
-    \node[fill=white,rounded corners=3pt,inner sep=6pt,anchor=north west]
+    % --- logo de l'école, sur une carte noire (le PNG est transparent)
+    \node[fill=black,rounded corners=3pt,inner sep=6pt,anchor=north west]
       at ([shift={(0.95,-0.75)}]current page.north west)
       {\includegraphics[width=2.8cm]{illustrations/background-logo.png}};
 
@@ -113,7 +113,7 @@
        à la distillation de modèles\par}
       \vspace{0.85cm}
       {\color{alivegold}\footnotesize\bfseries
-       ATELIER bioIA \quad·\quad SAMEDI 8 AOÛT 2026\par}
+       ATELIER bioIA AfricaBP \quad·\quad 28 -- 29 OCTOBRE 2026\par}
     };
   \end{tikzpicture}
 \end{frame}}
@@ -171,7 +171,7 @@
       \end{itemize}
       \medskip
 
-      \begin{keybox}{La question de la semaine}
+      \begin{keybox}{La question de l'atelier}
         \small Notre tâche : \textbf{prédire où se trouvent les gènes}.
         On vous donne 200 lettres d'ADN --- est-ce un morceau de gène,
         oui ou non ?
@@ -331,39 +331,42 @@
 
 % =========================================================
 \section{Ce que nous construirons}
-\begin{frame}{Cinq jours, un pipeline complet}
+\begin{frame}{Trois jours, cinq labs + un bonus : un pipeline complet}
   \centering
   \begin{tikzpicture}[node distance=0.28cm,every node/.style={font=\tiny}]
-    \node[bx=2.05cm,alt=<1>{fill=alivegold!15,draw=alivegold}{}] (d1)
-      {{\color{alivegold}\bfseries JOUR 1}\\[2pt]Données\\+ baselines};
-    \node[bx=2.05cm,right=of d1,alt=<2>{fill=alivegold!15,draw=alivegold}{}] (d2)
-      {{\color{alivegold}\bfseries JOUR 2}\\[2pt]Evo2 :\\le professeur};
-    \node[bx=2.05cm,right=of d2,alt=<3>{fill=alivegold!15,draw=alivegold}{}] (d3)
-      {{\color{alivegold}\bfseries JOUR 3}\\[2pt]Distillation\\prof $\rightarrow$ élève};
-    \node[bx=2.05cm,right=of d3,alt=<4>{fill=alivegold!15,draw=alivegold}{}] (d4)
-      {{\color{alivegold}\bfseries JOUR 4}\\[2pt]Le verdict :\\taille vs précision};
-    \node[gbx=2.15cm,right=of d4,alt=<5>{fill=alivegold!15}{}] (d5)
-      {{\color{alivegold}\bfseries JOUR 5 --- BONUS}\\[2pt]Qu'a compris\\le modèle, seul ?};
+    \node[bx=1.95cm,alt=<1>{fill=alivegold!15,draw=alivegold}{}] (d1)
+      {{\color{alivegold}\bfseries LAB 1}\\[2pt]Données\\+ baselines};
+    \node[bx=1.95cm,right=of d1,alt=<2>{fill=alivegold!15,draw=alivegold}{}] (d2)
+      {{\color{alivegold}\bfseries LAB 2}\\[2pt]Evo2 :\\le professeur};
+    \node[bx=1.95cm,right=of d2,alt=<3>{fill=alivegold!15,draw=alivegold}{}] (d3)
+      {{\color{alivegold}\bfseries LAB 3}\\[2pt]Distillation\\prof $\rightarrow$ élève};
+    \node[bx=1.95cm,right=of d3,alt=<4>{fill=alivegold!15,draw=alivegold}{}] (d4)
+      {{\color{alivegold}\bfseries LAB 4}\\[2pt]Le verdict :\\taille vs précision};
+    \node[bx=1.95cm,right=of d4,alt=<5>{fill=alivegold!15,draw=alivegold}{}] (d5)
+      {{\color{alivegold}\bfseries LAB 5}\\[2pt]Qu'a compris\\le modèle, seul ?};
+    \node[gbx=1.95cm,right=of d5,alt=<6>{fill=alivegold!15}{}] (d6)
+      {{\color{alivegold}\bfseries LAB BONUS}\\[2pt]Et les protéines ?\\mini-démo ESM2};
     \draw[arr] (d1) -- (d2); \draw[arr] (d2) -- (d3);
     \draw[arr] (d3) -- (d4); \draw[arr] (d4) -- (d5);
+    \draw[arr,dashed] (d5) -- (d6);
   \end{tikzpicture}
 
   \vspace{0.55cm}
 
-  % --- puces orange : elles apparaissent sous le jour dont on parle
+  % --- puces orange : elles apparaissent sous le lab dont on parle
   \begin{minipage}[t][3.9cm][t]{0.96\textwidth}
     \small
     \only<1>{%
       \centering
-      \includegraphics[height=4.2cm,keepaspectratio]{illustrations/day1.png}}
+      \includegraphics[height=4.2cm,keepaspectratio]{illustrations/lab1.png}}
     \only<2>{%
       \centering
-      \includegraphics[height=4.2cm,keepaspectratio]{illustrations/day2.png}\\[4pt]
-      % \includegraphics[width=8.5cm,keepaspectratio]{illustrations/day2-bottom.png}
+      \includegraphics[height=4.2cm,keepaspectratio]{illustrations/lab2.png}\\[4pt]
+      % \includegraphics[width=8.5cm,keepaspectratio]{illustrations/lab2-bottom.png}
       }
     \only<3>{%
       \centering
-      \includegraphics[height=5cm,keepaspectratio]{illustrations/day3.png}}
+      \includegraphics[height=5cm,keepaspectratio]{illustrations/lab3.png}}
     \only<4>{%
       \begin{itemize}
         \item Tous les modèles sur un seul graphique : précision, taille, latence
@@ -372,11 +375,25 @@
     \only<5>{%
       \begin{itemize}
         \item Sans aucune étiquette, que le modèle a-t-il découvert tout seul ?
-        \item Une piste \textbf{optionnelle}, pour les groupes en avance
+        \item Autoencodeurs parcimonieux sur les activations d'Evo2
       \end{itemize}
       \vspace{2pt}
       \centering
       \includegraphics[width=10.5cm,keepaspectratio]{illustrations/sae.png}}
+    \only<6>{%
+      \begin{minipage}[t]{0.5\textwidth}
+        \begin{itemize}
+          \item Le même pipeline, appliqué aux \textbf{protéines}
+          \item ESM2 (modèle de langage protéique) $\rightarrow$ embeddings
+            $\rightarrow$ petit classifieur
+          \item 8 familles de facteurs de transcription végétaux
+          \item Une courte démo, \textbf{optionnelle}
+        \end{itemize}
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.46\textwidth}
+        \vspace{0pt}\centering
+        \includegraphics[height=3.8cm,keepaspectratio]{illustrations/lab-bonus-protein.png}
+      \end{minipage}}
   \end{minipage}
 \end{frame}
 
@@ -394,7 +411,7 @@
       {\color{alivegold}\footnotesize\bfseries COMMENT ON TRAVAILLE\par}
       \vspace{0.35cm}
       {\color{white}\fontsize{26}{28}\selectfont\bfseries
-       Vous complétez les trous, jour après jour.\par}
+       Vous complétez les trous, lab après lab.\par}
       \vspace{0.55cm}
       {\color{white!80}\fontsize{12.5}{16}\selectfont
        Chaque matin, un notebook \textbf{incomplet} vous attend : le squelette est
@@ -402,7 +419,7 @@
        passons si besoin, et le soir votre pipeline a avancé d'un cran.\par}
       \vspace{0.5cm}
       {\color{white!80}\fontsize{12.5}{16}\selectfont
-       En cinq jours, vous serez passés d'un génome brut à un modèle compressé
+       En trois jours, vous serez passés d'un génome brut à un modèle compressé
        que vous aurez construit, mesuré et compris.% --- et vous le présenterez.\par
        }
       % \vspace{0.85cm}
