@@ -1,6 +1,6 @@
-# EEIA — bioAI Workshop
+# AfricaBP — bioAI Workshop
 # Author: Généreux Akotenou — PhD student, BioinformaticLabs College of Computing / UM6P
-# https://github.com/Genereux-akotenou/EEIA-bioAI-Workshop
+# https://github.com/Bioinformatics-UM6P/AfricaBP-workshop-handson-26
 # Licensed under the MIT License. See LICENSE at the repo root.
 
 """
@@ -14,7 +14,7 @@ single embedding per window, and saves embeddings + labels for the
 supervised teacher classifier (notebook 02) and later distillation
 (notebook 03).
 
-Students do NOT run this during the week — the API key/quota is yours, and
+Students do NOT run this during the workshop — the API key/quota is yours, and
 this is exactly the "pre-extract before the school" step that makes the
 core pipeline independent of live API availability.
 

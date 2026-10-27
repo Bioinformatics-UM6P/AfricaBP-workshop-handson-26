@@ -11,7 +11,7 @@
 > notebook. Rien ici n'est un prérequis noté : c'est du contexte pour que les données
 > aient du sens.
 >
-> Le déroulé de la semaine reste dans [`guide.md`](guide.md).
+> Le déroulé de l'atelier reste dans [`guide.md`](guide.md).
 
 ---
 
@@ -38,7 +38,7 @@ du texte.
 | **Gène / CDS** | Un segment qui code une protéine | C'est la classe `1` que l'on cherche à prédire |
 | **Intergénique** | Ce qu'il y a *entre* les gènes | C'est la classe `0` |
 
-> 💡 **L'idée centrale de la semaine :** si l'ADN est du texte, alors tout ce que
+> 💡 **L'idée centrale de l'atelier :** si l'ADN est du texte, alors tout ce que
 > l'on sait faire en NLP (n-grammes, embeddings, modèles de fondation, distillation)
 > s'y applique. La tâche « codant vs non-codant » est notre classification binaire.
 
@@ -140,7 +140,7 @@ Vous obtenez exactement la paire de fichiers présente dans [`../2-data/raw/`](.
 | **Brin** (`+` / `−`) | L'ADN a deux brins lus en sens opposés |
 | **CDS** | *Coding Sequence* — un segment traduit en protéine |
 | **Intergénique** | Région située entre deux gènes |
-| **Codon** | Un triplet de bases. La périodicité 3 du Jour 5 vient de là |
+| **Codon** | Un triplet de bases. La périodicité 3 du Lab 5 vient de là |
 | **Assemblage** | Un génome reconstitué à partir de fragments séquencés |
 | **Annotation** | Les métadonnées de position : où sont les gènes |
 | **FASTA / GFF** | Les deux formats ci-dessus : séquence / annotations |
@@ -149,21 +149,21 @@ Vous obtenez exactement la paire de fichiers présente dans [`../2-data/raw/`](.
 
 ## ➕ 4. Autres ressources
 
-<!-- Ajoutez ici les ressources supplémentaires au fil de la semaine.
+<!-- Ajoutez ici les ressources supplémentaires au fil de l'atelier.
      Format suggéré, pour rester lisible :
 
 ### 📄 Titre de la ressource
 **Type :** article · vidéo · outil · cours
 🔗 <https://…>
-Une ou deux phrases : ce que ça apporte et à quel moment de la semaine le lire.
+Une ou deux phrases : ce que ça apporte et à quel moment de l'atelier le lire.
 -->
 
-*Cette section sera enrichie au fil de la semaine.*
+*Cette section sera enrichie au fil de l'atelier.*
 
 ---
 
 <div align="center">
 
-**Prêt·e ?** → [`guide.md`](guide.md) → [`../day1/`](../day1/)
+**Prêt·e ?** → [`guide.md`](guide.md) → [`../lab1/`](../lab1/)
 
 </div>

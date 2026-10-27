@@ -1,6 +1,6 @@
-# EEIA — bioAI Workshop
+# AfricaBP — bioAI Workshop
 # Author: Généreux Akotenou — PhD student, BioinformaticLabs College of Computing / UM6P
-# https://github.com/Genereux-akotenou/EEIA-bioAI-Workshop
+# https://github.com/Bioinformatics-UM6P/AfricaBP-workshop-handson-26
 # Licensed under the MIT License. See LICENSE at the repo root.
 
 """
@@ -8,7 +8,7 @@ NVIDIA-API-KEY : https://build.nvidia.com/arc/evo2-7b-forward/modelcard
 
 extract_autoencoder_activations.py — ORGANISATEUR.
 
-Prépare le jeu de données de la piste bonus (Jour 5, autoencodeur parcimonieux).
+Prépare le jeu de données de la piste bonus (Lab 5, autoencodeur parcimonieux).
 
 Différence avec extract_evo2_embeddings.py :
 
@@ -38,7 +38,7 @@ python extract_autoencoder_activations.py \
 Coût : une fenêtre de 4096 pb ≈ 40 s d'API, ≈ 46 Mo de réponse et 67 Mo sur disque
 (4096 vecteurs de 4096 dimensions, toutes les positions conservées).
 
-On garde TOUTES les positions (token_stride=1) parce que l'analyse du Jour 5 cherche
+On garde TOUTES les positions (token_stride=1) parce que l'analyse du Lab 5 cherche
 une périodicité par FFT sur des positions consécutives : sous-échantillonner replierait
 le signal de période 3 des codons et donnerait un résultat faux.
 
@@ -174,12 +174,12 @@ def main():
     ap.add_argument("--out_dir", default="./autoencoder",
                     help="dossier de sortie (un sous-dossier par split)")
     ap.add_argument("--split", default="train", choices=["train", "eval"],
-                    help="le Jour 5 attend 'train' et 'eval' (pas 'val')")
+                    help="le Lab 5 attend 'train' et 'eval' (pas 'val')")
     ap.add_argument("--window", type=int, default=4096,
                     help="longueur des fenêtres envoyées à Evo2 (contexte long)")
     ap.add_argument("--token_stride", type=int, default=1,
                     help="on garde 1 token sur N. LAISSEZ 1 : l'analyse de périodicité "
-                         "du Jour 5 (FFT sur positions consécutives) est fausse dès "
+                         "du Lab 5 (FFT sur positions consécutives) est fausse dès "
                          "que l'on sous-échantillonne")
     ap.add_argument("--max_windows", type=int, default=20,
                     help="nombre de fenêtres à extraire pour ce split")

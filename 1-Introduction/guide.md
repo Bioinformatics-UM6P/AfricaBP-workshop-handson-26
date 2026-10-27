@@ -1,12 +1,13 @@
 <h1 align="center">🧬 AI & Biologie: Entrainement d'un model de classification d'ADN & Introduction a la distillation de model</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/JOUR_0-Kickoff-64748b?style=for-the-badge" alt="Day 0"/>
-  <img src="https://img.shields.io/badge/JOUR_1-Biologie%20%2B%20Baselines-5eead4?style=for-the-badge&labelColor=0d1526" alt="Day 1"/>
-  <img src="https://img.shields.io/badge/JOUR_2-Embeddings%20Evo2-818cf8?style=for-the-badge&labelColor=0d1526" alt="Day 2"/>
-  <img src="https://img.shields.io/badge/JOUR_3-Distillation-f472b6?style=for-the-badge&labelColor=0d1526" alt="Day 3"/>
-  <img src="https://img.shields.io/badge/JOUR_4-Efficacité-fbbf24?style=for-the-badge&labelColor=0d1526" alt="Day 4"/>
-  <img src="https://img.shields.io/badge/JOUR_5-Bonus%20%2B%20Demos-a78bfa?style=for-the-badge&labelColor=0d1526" alt="Day 5"/>
+  <img src="https://img.shields.io/badge/LAB_0-Kickoff-64748b?style=for-the-badge" alt="Lab 0"/>
+  <img src="https://img.shields.io/badge/LAB_1-Biologie%20%2B%20Baselines-5eead4?style=for-the-badge&labelColor=0d1526" alt="Lab 1"/>
+  <img src="https://img.shields.io/badge/LAB_2-Embeddings%20Evo2-818cf8?style=for-the-badge&labelColor=0d1526" alt="Lab 2"/>
+  <img src="https://img.shields.io/badge/LAB_3-Distillation-f472b6?style=for-the-badge&labelColor=0d1526" alt="Lab 3"/>
+  <img src="https://img.shields.io/badge/LAB_4-Efficacité-fbbf24?style=for-the-badge&labelColor=0d1526" alt="Lab 4"/>
+  <img src="https://img.shields.io/badge/LAB_5-Bonus%20%2B%20Demos-a78bfa?style=for-the-badge&labelColor=0d1526" alt="Lab 5"/>
+  <img src="https://img.shields.io/badge/LAB-Bonus%20Prot%C3%A9ines-94a3b8?style=for-the-badge&labelColor=0d1526" alt="Lab Bonus"/>
 </p>
 
 <br>
@@ -21,29 +22,32 @@
 
 ## 🗺️ Vue d'ensemble
 
-| | Jour | Thème | Notebook |
-|---|---|---|---|
-| 🟦 | **0** | Kickoff & préparation des données | `presentation` |
-| 🟩 | **1** | Biologie + baselines | `00_biology_intro...` · `01_kmer_and_cnn...` |
-| 🟪 | **2** | Embeddings Evo2 | `02_evo2_embeddings...` |
-| 🟥 | **3** | Distillation | `03_knowledge_distillation...` |
-| 🟨 | **4** | Analyse d'efficacité | `04_compression_analysis...` |
-| 🟧 | **5** | Bonus + présentations | `bonus_sparse_autoencoder...` |
+L'atelier dure **trois jours** et se découpe en **labs** :
+
+| | Jour | Lab | Thème | Notebook |
+|---|---|---|---|---|
+| 🟦 | 1 | **0** | Kickoff & préparation des données | `presentation` |
+| 🟩 | 1 | **1** | Biologie + baselines | `00_biology_intro...` · `01_kmer_and_cnn...` |
+| 🟪 | 2 | **2** | Embeddings Evo2 | `02_evo2_embeddings...` |
+| 🟥 | 2 | **3** | Distillation | `03_knowledge_distillation...` |
+| 🟨 | 3 | **4** | Analyse d'efficacité | `04_compression_analysis...` |
+| 🟧 | 3 | **5** | Bonus + présentations | `bonus_sparse_autoencoder...` |
+| ⬜ | — | **Bonus** | Extension protéines (ESM2) | `labBonus/protein_classification_esm2...` |
 
 **Progression du pipeline :** `🟩🟩🟩🟩🟩`
 <br>
 <br>
 
-## 📁 Anatomie d'un dossier de jour
+## 📁 Anatomie d'un dossier de lab
 
 ```text
-week4/
-  day1/  📗 Biologie + baselines
+AfricaBP-workshop-handson-26/
+  lab1/  📗 Biologie + baselines
     ├── <notebooks>.ipynb   ← incomplet : des TODO à remplir, guidés étape par étape
-    ├── src/                ← copie locale des modules dont ce jour a besoin — également
-    │                          incomplète là où le TODO est l'objectif pédagogique du jour
+    ├── src/                ← copie locale des modules dont ce lab a besoin — également
+    │                          incomplète là où le TODO est l'objectif pédagogique du lab
     └── solution/           ← clone complet : notebooks + src entièrement remplis
-  day2/ 
+  lab2/ 
   …
 ```
 
@@ -51,11 +55,11 @@ week4/
 
 ### 🎯 Objectif & méthode de travail
 
-Chaque jour suit le même rythme :
+Chaque lab suit le même rythme :
 
-1. 📢 **Nous annonçons l'objectif du jour** - ce qu'on construit et pourquoi (voir le tableau *Vue d'ensemble* ci-dessus).
-2. ⬆️ **Nous mettons à jour le dépôt GitHub** avec le nouveau matériel (`dayN/` : notebooks + `src/` à compléter).
-3. ⬇️ **Vous récupérez le matériel du jour** avec une seule commande (voir ci-dessous).
+1. 📢 **Nous annonçons l'objectif du lab** - ce qu'on construit et pourquoi (voir le tableau *Vue d'ensemble* ci-dessus).
+2. ⬆️ **Nous mettons à jour le dépôt GitHub** avec le nouveau matériel (`labN/` : notebooks + `src/` à compléter).
+3. ⬇️ **Vous récupérez le matériel du lab** avec une seule commande (voir ci-dessous).
 4. ✍️ **Vous complétez les objectifs** — les `# TODO` des notebooks et de `src/`, guidés étape par étape.
 5. 🙋 **Nous passons entre les groupes** — posez toutes vos questions, on est là pour ça.
 
@@ -64,15 +68,15 @@ Chaque jour suit le même rythme :
 **La toute première fois** (cloner le dépôt) :
 
 ```bash
-git clone https://github.com/Genereux-akotenou/EEIA-bioAI-Workshop.git
-cd EEIA-bioAI-Workshop
+git clone https://github.com/Bioinformatics-UM6P/AfricaBP-workshop-handson-26.git
+cd AfricaBP-workshop-handson-26
 ```
 
-**Chaque jour ensuite** (récupérer le nouveau matériel) :
+**À chaque nouveau lab** (récupérer le nouveau matériel) :
 
 ```bash
-cd EEIA-bioAI-Workshop
-git pull origin master
+cd AfricaBP-workshop-handson-26
+git pull origin main
 ```
 
 > ⚠️ Travaillez dans un dossier à vous (ex. `mon_travail/`) ou gardez une copie de vos
@@ -89,10 +93,10 @@ git pull origin master
 </div>
 <table width="100%"><tr><td bgcolor="#f3f4f6">
 
-## 🟩 Jour 1: Biologie + baselines → [`../day1/`](../day1/)
+## 🟩 Lab 1: Biologie + baselines → [`../lab1/`](../lab1/)
 
-- 📓 [`00_biology_intro_and_data_setup.ipynb`](../day1/00_biology_intro_and_data_setup.ipynb) : dogme central, FASTA/GFF bruts, d'où viennent les étiquettes.
-- 📓 [`01_kmer_and_cnn_baselines.ipynb`](../day1/01_kmer_and_cnn_baselines.ipynb) : k-mer + régression logistique, one-hot + CNN.
+- 📓 [`00_biology_intro_and_data_setup.ipynb`](../lab1/00_biology_intro_and_data_setup.ipynb) : dogme central, FASTA/GFF bruts, d'où viennent les étiquettes.
+- 📓 [`01_kmer_and_cnn_baselines.ipynb`](../lab1/01_kmer_and_cnn_baselines.ipynb) : k-mer + régression logistique, one-hot + CNN.
 - 📓 `src/` : `data.py` (complet) · `featurize.py` + `models/baselines.py` + `eval.py` (**incomplet**).
 
 <div style="margin:1rem 0;padding:1rem 1.25rem;border-left:5px solid #f59e0b;background:#fff8e6;border-radius:6px;">
@@ -119,7 +123,7 @@ git pull origin master
   </p>
   <!--
   <p style="margin-top:.6rem;">
-    📂 <a href="../day1/solution/"><code>../day1/solution/</code></a>
+    📂 <a href="../lab1/solution/"><code>../lab1/solution/</code></a>
   </p>
   -->
 </div>
@@ -137,9 +141,9 @@ git pull origin master
 
 <table width="100%"><tr><td bgcolor="#f3f4f6">
 
-## 🟪 Jour 2 : Embeddings Evo2 → [`../day2/`](../day2/)
+## 🟪 Lab 2 : Embeddings Evo2 → [`../lab2/`](../lab2/)
 
-- 📓 [`02_evo2_embeddings_and_classifier.ipynb`](../day2/02_evo2_embeddings_and_classifier.ipynb):  charger les embeddings pré-calculés, entraîner la tête MLP, visualisation PCA/UMAP.
+- 📓 [`02_evo2_embeddings_and_classifier.ipynb`](../lab2/02_evo2_embeddings_and_classifier.ipynb):  charger les embeddings pré-calculés, entraîner la tête MLP, visualisation PCA/UMAP.
 - 📓 `src/` : `embeddings.py` + `eval.py` (complets) · `models/classifier_heads.py` + `viz.py` (**incomplet**).
 
 <div style="margin:1rem 0;padding:1rem 1.25rem;border-left:5px solid #8b5cf6;background:#f5f3ff;border-radius:6px;">
@@ -147,7 +151,7 @@ git pull origin master
 
   <p style="margin:0;">
     Le classifieur <strong>Evo2</strong> doit obtenir de meilleures performances que les
-    <strong>deux baselines du Jour&nbsp;1</strong>.
+    <strong>deux baselines du Lab&nbsp;1</strong>.
   </p>
 </div>
 
@@ -160,7 +164,7 @@ git pull origin master
 
   <!--
   <p style="margin-top:.6rem;">
-    📂 <a href="../day2/solution/"><code>../day2/solution/</code></a>
+    📂 <a href="../lab2/solution/"><code>../lab2/solution/</code></a>
   </p>
   -->
 </div>
@@ -179,9 +183,9 @@ git pull origin master
 
 <table width="100%"><tr><td bgcolor="#f3f4f6">
 
-## 🟥 Jour 3 : Distillation de connaissances → [`../day3/`](../day3/)
+## 🟥 Lab 3 : Distillation de connaissances → [`../lab3/`](../lab3/)
 
-- 📓 [`03_knowledge_distillation.ipynb`](../day3/03_knowledge_distillation.ipynb) : INtroduction a la distaillation - teacher → student.
+- 📓 [`03_knowledge_distillation.ipynb`](../lab3/03_knowledge_distillation.ipynb) : INtroduction a la distaillation - teacher → student.
 - 📓 `src/` : `data.py`, `embeddings.py`, `featurize.py`, `models/classifier_heads.py`, `eval.py` (complets, portés) · `models/distillation.py` (**incomplet**).
 
 <div style="margin:1rem 0;padding:1rem 1.25rem;border-left:5px solid #ef4444;background:#fef2f2;border-radius:6px;">
@@ -202,7 +206,7 @@ git pull origin master
 
   <!--
   <p style="margin-top:.6rem;">
-    📂 <a href="../day3/solution/"><code>../day3/solution/</code></a>
+    📂 <a href="../lab3/solution/"><code>../lab3/solution/</code></a>
   </p>
   -->
 </div>
@@ -219,9 +223,9 @@ git pull origin master
 
 <table width="100%"><tr><td bgcolor="#f3f4f6">
 
-## 🟨 Jour 4 : Analyse de compression → [`../day4/`](../day4/)
+## 🟨 Lab 4 : Analyse de compression → [`../lab4/`](../lab4/)
 
-- 📓 [`04_compression_analysis_and_wrapup.ipynb`](../day4/04_compression_analysis_and_wrapup.ipynb) : un seul graphique, tous les modèles construits cette semaine.
+- 📓 [`04_compression_analysis_and_wrapup.ipynb`](../lab4/04_compression_analysis_and_wrapup.ipynb) : un seul graphique, tous les modèles construits pendant l'atelier.
 - 📓 `src/` : `viz.py` (**incomplet**, uniquement `plot_efficiency_tradeoff`).
 
 <div style="margin:1rem 0;padding:1rem 1.25rem;border-left:5px solid #eab308;background:#fefce8;border-radius:6px;">
@@ -247,7 +251,7 @@ git pull origin master
 
   <!--
   <p style="margin-top:.6rem;">
-    📂 <a href="../day4/solution/"><code>../day4/solution/</code></a>
+    📂 <a href="../lab4/solution/"><code>../lab4/solution/</code></a>
   </p>
   -->
 </div>
@@ -264,9 +268,9 @@ git pull origin master
 
 <table width="100%"><tr><td bgcolor="#f3f4f6">
 
-## 🟧 Jour 5 : Piste bonus + présentations → [`../day5/`](../day5/)
+## 🟧 Lab 5 : Piste bonus + présentations → [`../lab5/`](../lab5/)
 
-- 📓 [`bonus_sparse_autoencoder_interpretability.ipynb`](../day5/bonus_sparse_autoencoder_interpretability.ipynb) — groupes optionnels/avancés.
+- 📓 [`bonus_sparse_autoencoder_interpretability.ipynb`](../lab5/bonus_sparse_autoencoder_interpretability.ipynb) — groupes optionnels/avancés.
 - 📓 `src/` : `data.py`, `featurize.py`, `embeddings.py` (complets, portés) · `models/sae.py` + `viz.py` (**incomplet**).
 
 <div style="margin:1rem 0;padding:1rem 1.25rem;border-left:5px solid #f97316;background:#fff7ed;border-radius:6px;">
@@ -287,7 +291,7 @@ git pull origin master
 
   <!--
   <p style="margin-top:.6rem;">
-    📂 <a href="../day5/solution/"><code>../day5/solution/</code></a>
+    📂 <a href="../lab5/solution/"><code>../lab5/solution/</code></a>
   </p>
   -->
 </div>
@@ -295,3 +299,17 @@ git pull origin master
 <div style="height:0.5em; width: 100%; background: #ddd;"></div>
 <br><br>
 
+
+
+<!-- ******************************** -->
+<!-- ******************************** -->
+<table width="100%"><tr><td bgcolor="#f3f4f6">
+
+## ⬜ Lab Bonus : Extension protéines (ESM2) → [`../labBonus/`](../labBonus/)
+
+- 📓 [`protein_classification_esm2.ipynb`](../labBonus/protein_classification_esm2.ipynb) : le même pipeline appliqué aux protéines — embeddings ESM2 + classifieur sur 8 familles de facteurs de transcription végétaux.
+- 📖 Détails et prérequis dans [`../labBonus/README.md`](../labBonus/README.md).
+
+</td></tr></table>
+<div style="height:0.5em; width: 100%; background: #ddd;"></div>
+<br><br>

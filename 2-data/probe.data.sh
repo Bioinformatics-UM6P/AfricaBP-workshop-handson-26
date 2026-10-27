@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# EEIA — bioAI Workshop — données de SONDAGE du Jour 5 (organisateur).
+# AfricaBP — bioAI Workshop — données de SONDAGE du Lab 5 (organisateur).
 #
 #   export NVIDIA_API_KEY=nvapi-...
 #   bash probe.data.sh

@@ -1,13 +1,13 @@
-# EEIA — bioAI Workshop
+# AfricaBP — bioAI Workshop
 # Author: Généreux Akotenou — PhD student, BioinformaticLabs College of Computing / UM6P
-# https://github.com/Genereux-akotenou/EEIA-bioAI-Workshop
+# https://github.com/Bioinformatics-UM6P/AfricaBP-workshop-handson-26
 # Licensed under the MIT License. See LICENSE at the repo root.
 
 """
 prepare_data.py — organizer-only, run ONCE before the school starts.
 
 Wires together the two data-prep steps from `../../code/src/` into a single, idempotent
-command, so the whole week's data is built/extracted once and never touched again:
+command, so the whole workshop's data is built/extracted once and never touched again:
 
   1. build_dataset.py           raw FASTA/GFF  -> labeled window CSVs
   2. extract_evo2_embeddings.py labeled CSVs   -> Evo2 embeddings (needs NVIDIA_API_KEY)

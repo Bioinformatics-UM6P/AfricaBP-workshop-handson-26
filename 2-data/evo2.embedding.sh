@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# EEIA — bioAI Workshop — extraction des embeddings Evo2 (organisateur uniquement).
+# AfricaBP — bioAI Workshop — extraction des embeddings Evo2 (organisateur uniquement).
 #
 # La clé API n'est PAS stockée dans ce fichier : exportez-la avant de lancer le script.
 #   export NVIDIA_API_KEY=nvapi-...

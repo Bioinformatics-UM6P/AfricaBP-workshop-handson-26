@@ -1,12 +1,12 @@
-# EEIA — bioAI Workshop
+# AfricaBP — bioAI Workshop
 # Author: Généreux Akotenou — PhD student, BioinformaticLabs College of Computing / UM6P
-# https://github.com/Genereux-akotenou/EEIA-bioAI-Workshop
+# https://github.com/Bioinformatics-UM6P/AfricaBP-workshop-handson-26
 # Licensed under the MIT License. See LICENSE at the repo root.
 
 """
 NVIDIA-API-KEY : https://build.nvidia.com/arc/evo2-7b-forward/modelcard
 
-prepare_probe_genome.py — ORGANISATEUR. Données de SONDAGE du Jour 5.
+prepare_probe_genome.py — ORGANISATEUR. Données de SONDAGE du Lab 5.
 
 Prend UN génome et son GFF, et produit une **piste continue** :
 
