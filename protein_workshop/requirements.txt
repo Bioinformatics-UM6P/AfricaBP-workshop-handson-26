@@ -1,0 +1,23 @@
+# Protein Workshop Requirements
+# For ESM2 protein embeddings and knowledge distillation
+
+# Core ML
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+
+# JAX/Flax (following AI for Biology pattern)
+jax>=0.4.0
+flax>=0.7.0
+optax>=0.1.0
+orbax>=0.1.0
+
+# Bioinformatics
+biopython>=1.81
+fair-esm>=2.0.0  # ESM2 protein language model
+
+# Utilities
+tqdm>=4.65.0
+requests>=2.31.0
+matplotlib>=3.7.0
+seaborn>=0.12.0

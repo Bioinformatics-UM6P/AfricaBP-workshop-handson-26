@@ -24,3 +24,8 @@ venv/
 !2-data/embeddings/README.md
 2-data/probe/**
 !2-data/probe/README.md
+
+# Protein workshop large files
+protein_workshop/2-data/processed/train.npz
+protein_workshop/2-data/embeddings/*
+!protein_workshop/2-data/embeddings/README.md

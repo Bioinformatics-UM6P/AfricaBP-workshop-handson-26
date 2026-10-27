@@ -1,0 +1,24 @@
+{
+  "model": "esm2_t12_35M_UR50D",
+  "num_classes": 8,
+  "classes": [
+    "GRF",
+    "E2F__DP",
+    "DBB",
+    "CPP",
+    "GeBP",
+    "BES1",
+    "CAMTA",
+    "BBR-BPC"
+  ],
+  "train_samples": 8001,
+  "val_samples": 1715,
+  "test_samples": 1715,
+  "embedding_dim": 480,
+  "val_accuracy": 0.9883381924198251,
+  "val_f1": 0.9882347873772912,
+  "val_auc": 0.9999068139845013,
+  "test_accuracy": 0.9883381924198251,
+  "test_f1": 0.9877624636454151,
+  "test_auc": 0.99988013063831
+}
